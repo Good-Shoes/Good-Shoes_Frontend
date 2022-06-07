@@ -1,6 +1,8 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Dra_board from "../components/Dra_board";
+import Dra_board from "../components/drawing_board/Dra_board";
+import Eraser from "../components/eraser/Eraser";
+import Pencil from "../components/pencil/Pencil";
 
 const Home: NextPage = () => {
   return (
@@ -13,6 +15,8 @@ const Home: NextPage = () => {
       <h1 className="hey">
         hey <a>Next.js</a>
       </h1>
+      <Pencil />
+      <Eraser />
       <Dra_board />
     </>
   );

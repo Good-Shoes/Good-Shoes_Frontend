@@ -1,6 +1,6 @@
 import React from "react";
 import { useRef, useState, useEffect } from "react";
-import { Board } from "./drawing_board/Style";
+import { Board } from "./Style";
 
 const Dra_board = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -33,9 +33,11 @@ const Dra_board = () => {
     //canvas.getContext('2d')의 값이 있을 때
     if (ctx) {
       if (!isDrawing) {
+        //false
         ctx.beginPath();
         ctx.moveTo(offsetX, offsetY);
       } else {
+        //true
         ctx.lineTo(offsetX, offsetY);
         ctx.stroke();
       }
