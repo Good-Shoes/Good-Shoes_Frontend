@@ -1,7 +1,6 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import Link from "next/link";
-import { Board } from "../components/drawing_board/Style";
+import Dra_board from "../components/Dra_board";
 
 const Home: NextPage = () => {
   return (
@@ -10,13 +9,11 @@ const Home: NextPage = () => {
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Board />
-      <h1 className="contents">
-        hey{" "}
-        <Link href="posts/first-post">
-          <a>Next.js</a>
-        </Link>
+
+      <h1 className="hey">
+        hey <a>Next.js</a>
       </h1>
+      <Dra_board />
     </>
   );
 };
