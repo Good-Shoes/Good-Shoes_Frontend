@@ -1,5 +1,7 @@
 import React from "react";
 import { useRef, useState, useEffect } from "react";
+import { useRecoilState, useRecoilValue } from "recoil";
+import { Pencil_Eraser, ToolState } from "../../Atoms/atom";
 import { Board } from "./Style";
 
 const Dra_board = () => {
@@ -8,6 +10,8 @@ const Dra_board = () => {
 
   const [ctx, setCtx] = useState<any>(); // 캔버스의 드로잉 컨텍스트
   const [isDrawing, setIsDrawing] = useState(false);
+  const [Tool, setTool] = useRecoilState(ToolState);
+  const [Pen_or_Eraser, setPen_or_Eraser] = useRecoilState(Pencil_Eraser);
 
   useEffect(() => {
     const canvas: any = canvasRef.current;
@@ -17,8 +21,10 @@ const Dra_board = () => {
     context.lineWidth = 2.5; // 선의 굵기
     contextRef.current = context;
 
+    setTool(false);
+    setPen_or_Eraser(false);
     setCtx(context);
-  });
+  }, []);
 
   const startDrawing = () => {
     setIsDrawing(true);
@@ -30,16 +36,35 @@ const Dra_board = () => {
 
   const drawing = ({ nativeEvent }: any) => {
     const { offsetX, offsetY } = nativeEvent;
-    //canvas.getContext('2d')의 값이 있을 때
-    if (ctx) {
+
+    const YouCanDrawing = () => {
       if (!isDrawing) {
-        //false
+        //false 클릭 안하고 있을때
         ctx.beginPath();
         ctx.moveTo(offsetX, offsetY);
       } else {
-        //true
+        //true 클릭 하고 있을때
         ctx.lineTo(offsetX, offsetY);
         ctx.stroke();
+      }
+    };
+
+    const YouCanErasing = () => {
+      if (!isDrawing) {
+        //false 클릭 안하고 있을때
+        ctx.beginPath();
+        ctx.moveTo(offsetX, offsetY);
+      } else {
+        //true 클릭 하고 있을때
+        ctx.clearRect(offsetX, offsetY, 30, 30);
+        // ctx.stroke();
+      }
+    };
+
+    //canvas.getContext('2d')의 값이 있을 때
+    if (ctx) {
+      if (Tool == true) {
+        Pen_or_Eraser ? YouCanDrawing() : YouCanErasing();
       }
     }
   };
