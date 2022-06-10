@@ -1,7 +1,7 @@
 import React from "react";
 import { useRef, useState, useEffect } from "react";
 import { useRecoilState, useRecoilValue } from "recoil";
-import { Pencil_Eraser, ToolState } from "../../Atoms/atom";
+import { Pencil_Eraser, ToolState, Mouse_Cursor } from "../../Atoms/atom";
 import { Board } from "./Style";
 
 const Dra_board = () => {
@@ -10,8 +10,10 @@ const Dra_board = () => {
 
   const [ctx, setCtx] = useState<any>(); // 캔버스의 드로잉 컨텍스트
   const [isDrawing, setIsDrawing] = useState(false);
+
   const [Tool, setTool] = useRecoilState(ToolState);
   const [Pen_or_Eraser, setPen_or_Eraser] = useRecoilState(Pencil_Eraser);
+  const [Cursor, setCursor] = useRecoilState(Mouse_Cursor);
 
   useEffect(() => {
     const canvas: any = canvasRef.current;
@@ -21,6 +23,7 @@ const Dra_board = () => {
     context.lineWidth = 2.5; // 선의 굵기
     contextRef.current = context;
 
+    setCursor("basic");
     setTool(false);
     setPen_or_Eraser(false);
     setCtx(context);
