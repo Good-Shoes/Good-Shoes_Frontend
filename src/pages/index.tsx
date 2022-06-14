@@ -8,7 +8,7 @@ import { Mouse_Cursor } from "../Atoms/atom";
 import { All } from "./indexStyle";
 
 const Home: NextPage = () => {
-  const Cursor: string = useRecoilValue(Mouse_Cursor);
+  const Cursor = useRecoilValue(Mouse_Cursor);
   const setCursor = useSetRecoilState(Mouse_Cursor);
 
   return (
@@ -17,7 +17,7 @@ const Home: NextPage = () => {
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <All>
+      <All cursorname={Cursor}>
         <Pencil />
         <Eraser />
         <Dra_board />
