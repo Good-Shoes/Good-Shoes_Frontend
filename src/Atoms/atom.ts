@@ -10,6 +10,11 @@ export const Pencil_Eraser = atom<boolean>({
   default: false,
 });
 
+export const ClearState = atom<boolean>({
+  key: "ClearState",
+  default: false,
+});
+
 export const Mouse_Cursor = atom<string>({
   key: "Mouse_Cursor",
   default: "default",
