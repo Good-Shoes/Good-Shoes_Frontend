@@ -15,7 +15,7 @@ const Eraser = () => {
   const eraser_mode = () => {
     console.log("eraser_mode");
     console.log(Tool);
-    setCursor("defaultf");
+    setCursor("eraser");
     setTool(true);
     setPen_or_Eraser(false);
   };
@@ -23,7 +23,7 @@ const Eraser = () => {
   return (
     <>
       <Eraser_frame onClick={eraser_mode}>
-        <p>지우개입니다.</p>
+        <img src="/Assets/eraser.png" alt="eraser" />
       </Eraser_frame>
     </>
   );

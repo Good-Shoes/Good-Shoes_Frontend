@@ -6,6 +6,7 @@ import Pencil from "../components/pencil/Pencil";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { Mouse_Cursor } from "../Atoms/atom";
 import { All } from "./indexStyle";
+import View_board from "../components/view_board/View_board";
 
 const Home: NextPage = () => {
   const Cursor = useRecoilValue(Mouse_Cursor);
@@ -14,13 +15,14 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Create Next App</title>
+        <title>Good-Shoes</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <All cursorname={Cursor}>
         <Pencil />
         <Eraser />
         <Dra_board />
+        <View_board />
       </All>
     </>
   );

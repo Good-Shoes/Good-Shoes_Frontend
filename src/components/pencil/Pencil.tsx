@@ -16,7 +16,7 @@ const Pencil = () => {
     console.log("pencil_mode");
     setTool(true);
     setPen_or_Eraser(true);
-    setCursor("pointer");
+    setCursor("pencil");
     console.log(Tool);
   };
 
