@@ -28,7 +28,7 @@ const Dra_board = () => {
     context.strokeStyle = "black"; // 선의 색
     context.lineWidth = 2.5; // 선의 굵기
     contextRef.current = context;
-
+    console.log(context);
     setClear(false);
     setCursor("default");
     setTool(false);
@@ -70,10 +70,18 @@ const Dra_board = () => {
       }
     };
 
+    const ClearAll = () => {
+      ctx.clearRect(0, 0, 500, 500);
+    };
+
     //canvas.getContext('2d')의 값이 있을 때
     if (ctx) {
       if (Tool == true) {
         Pen_or_Eraser ? YouCanDrawing() : YouCanErasing();
+      } else {
+        if (Clear == true) {
+          ClearAll();
+        }
       }
     }
   };
