@@ -12,5 +12,5 @@ export const Pencil_Eraser = atom<boolean>({
 
 export const Mouse_Cursor = atom<string>({
   key: "Mouse_Cursor",
-  default: "",
+  default: "default",
 });

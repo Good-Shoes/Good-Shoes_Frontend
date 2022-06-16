@@ -23,7 +23,7 @@ const Dra_board = () => {
     context.lineWidth = 2.5; // 선의 굵기
     contextRef.current = context;
 
-    setCursor("basic");
+    setCursor("default");
     setTool(false);
     setPen_or_Eraser(false);
     setCtx(context);

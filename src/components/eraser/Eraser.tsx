@@ -15,7 +15,7 @@ const Eraser = () => {
   const eraser_mode = () => {
     console.log("eraser_mode");
     console.log(Tool);
-    setCursor("default");
+    setCursor("defaultf");
     setTool(true);
     setPen_or_Eraser(false);
   };

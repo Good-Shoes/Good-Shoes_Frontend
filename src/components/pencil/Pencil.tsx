@@ -23,7 +23,7 @@ const Pencil = () => {
   return (
     <>
       <Pencil_frame onClick={pencil_mode}>
-        <div>pencil</div>
+        <img src="/Assets/pencil.png" alt="pencil" />
       </Pencil_frame>
     </>
   );
