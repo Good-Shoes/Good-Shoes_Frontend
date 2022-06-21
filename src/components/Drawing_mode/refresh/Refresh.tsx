@@ -1,16 +1,25 @@
 import React from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";
-import { ClearState, Mouse_Cursor, ToolState } from "../../../Atoms/atom";
+import { ClearState, CTX, Mouse_Cursor, ToolState } from "../../../Atoms/atom";
+
 import { Refresh_Frame } from "./Style";
 const Refresh = () => {
+  const Tool = useRecoilValue(ToolState);
   const setTool = useSetRecoilState(ToolState);
+
   const setCursor = useSetRecoilState(Mouse_Cursor);
   const setClear = useSetRecoilState(ClearState);
+  const ctx = useRecoilValue(CTX);
 
   const refresh_mode = () => {
+    console.log(ctx);
+    ctx.clearRect(0, 0, 500, 500);
+    console.log("Refresh");
+
     setTool(false);
-    setCursor("default");
+
     setClear(true);
+    setCursor("default");
   };
 
   return (

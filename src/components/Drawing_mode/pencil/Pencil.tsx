@@ -12,7 +12,6 @@ const Pencil = () => {
   const Tool = useRecoilValue(ToolState);
   const setTool = useSetRecoilState(ToolState);
 
-  const Pen_or_Eraser = useRecoilValue(Pencil_Eraser);
   const setPen_or_Eraser = useSetRecoilState(Pencil_Eraser);
 
   const setCursor = useSetRecoilState(Mouse_Cursor);

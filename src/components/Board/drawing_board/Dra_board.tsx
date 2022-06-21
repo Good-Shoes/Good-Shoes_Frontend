@@ -6,6 +6,7 @@ import {
   ToolState,
   Mouse_Cursor,
   ClearState,
+  CTX,
 } from "../../../Atoms/atom";
 import { Board } from "./Style";
 
@@ -13,7 +14,8 @@ const Dra_board = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const contextRef = useRef(null); // 캔버스의 드로잉 컨텍스트를 참조
 
-  const [ctx, setCtx] = useState<any>(); // 캔버스의 드로잉 컨텍스트
+  // const [ctx, setCtx] = useState<any>(); // 캔버스의 드로잉 컨텍스트
+  const [ctx, setCtx] = useRecoilState(CTX);
   const [isDrawing, setIsDrawing] = useState(false);
 
   const [Tool, setTool] = useRecoilState(ToolState);
@@ -70,18 +72,10 @@ const Dra_board = () => {
       }
     };
 
-    const ClearAll = () => {
-      ctx.clearRect(0, 0, 500, 500);
-    };
-
     //canvas.getContext('2d')의 값이 있을 때
     if (ctx) {
       if (Tool == true) {
         Pen_or_Eraser ? YouCanDrawing() : YouCanErasing();
-      } else {
-        if (Clear == true) {
-          ClearAll();
-        }
       }
     }
   };

@@ -19,3 +19,8 @@ export const Mouse_Cursor = atom<string>({
   key: "Mouse_Cursor",
   default: "default",
 });
+
+export const CTX = atom<any>({
+  key: "CTX",
+  default: "",
+});
