@@ -6,6 +6,7 @@ import { useRecoilValue } from "recoil";
 import { Mouse_Cursor } from "../Atoms/atom";
 import * as S from "./indexStyle";
 import View_board from "../components/Board/view_board/View_board";
+import Change_button from "../components/ChangeButton/Change_button";
 
 const Home: NextPage = () => {
   const Cursor = useRecoilValue(Mouse_Cursor);
@@ -26,6 +27,7 @@ const Home: NextPage = () => {
           <Dra_board />
           <View_board />
         </S.Board>
+        <Change_button />
       </S.All>
     </>
   );

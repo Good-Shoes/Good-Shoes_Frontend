@@ -4,12 +4,13 @@ import { ClearState, CTX, Mouse_Cursor, ToolState } from "../../../Atoms/atom";
 
 import { Refresh_Frame } from "./Style";
 const Refresh = () => {
+  const ctx = useRecoilValue(CTX);
+
   const Tool = useRecoilValue(ToolState);
   const setTool = useSetRecoilState(ToolState);
 
   const setCursor = useSetRecoilState(Mouse_Cursor);
   const setClear = useSetRecoilState(ClearState);
-  const ctx = useRecoilValue(CTX);
 
   const refresh_mode = () => {
     console.log(ctx);
@@ -17,7 +18,6 @@ const Refresh = () => {
     console.log("Refresh");
 
     setTool(false);
-
     setClear(true);
     setCursor("default");
   };
