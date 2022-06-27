@@ -20,6 +20,7 @@ export const Cursor = styled.div`
   grid-row-start: 2;
   grid-row-end: 3;
   justify-self: end;
+  padding-right: 20px;
 `;
 
 export const Board = styled.div`

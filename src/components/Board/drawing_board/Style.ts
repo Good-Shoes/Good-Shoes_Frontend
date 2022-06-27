@@ -6,4 +6,5 @@ export const Board = styled.div`
   border: 1px solid black;
   color: red;
   font-size: 30px;
+  margin-right: 5px;
 `;

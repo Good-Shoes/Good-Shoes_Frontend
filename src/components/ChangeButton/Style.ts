@@ -4,16 +4,17 @@ export const Button = styled.div`
   grid-row-start: 3;
   grid-column-start: 2;
   justify-self: center;
-  width: 150px;
-  height: 50px;
+  width: 180px;
+  height: 60px;
   border: 1px solid black;
-  border-radius: 10px;
+  border-radius: 20px;
+  margin-top: 50px;
   cursor: pointer;
 
   p {
     text-align: center;
-    line-height: 50px;
+    line-height: 60px;
 
-    font-size: 1.5rem;
+    font-size: 1.7rem;
   }
 `;
