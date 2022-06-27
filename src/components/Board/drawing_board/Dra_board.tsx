@@ -7,6 +7,7 @@ import {
   Mouse_Cursor,
   ClearState,
   CTX,
+  Image,
 } from "../../../Atoms/atom";
 import { Board } from "./Style";
 
@@ -15,6 +16,9 @@ const Dra_board = () => {
   const contextRef = useRef(null); // 캔버스의 드로잉 컨텍스트를 참조
 
   // const [ctx, setCtx] = useState<any>(); // 캔버스의 드로잉 컨텍스트
+
+  const [image, setImage] = useRecoilState(Image);
+
   const [ctx, setCtx] = useRecoilState(CTX);
   const [isDrawing, setIsDrawing] = useState(false);
 

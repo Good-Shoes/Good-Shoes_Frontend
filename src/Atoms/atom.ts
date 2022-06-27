@@ -24,3 +24,8 @@ export const CTX = atom<any>({
   key: "CTX",
   default: "",
 });
+
+export const Image = atom<string>({
+  key: "Image",
+  default: "",
+});
