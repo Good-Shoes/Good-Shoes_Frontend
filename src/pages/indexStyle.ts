@@ -4,10 +4,10 @@ import styled from "styled-components";
 export const All = styled.div<{ cursorname: string }>`
   width: 100%;
   height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 5px;
   cursor: ${(p): string | undefined =>
     p.cursorname == "default"
       ? "default"
@@ -17,12 +17,13 @@ export const All = styled.div<{ cursorname: string }>`
 `;
 
 export const Cursor = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
+  grid-row-start: 2;
+  grid-row-end: 3;
+  justify-self: end;
 `;
 
 export const Board = styled.div`
   display: flex;
-  flex-direction: row;
+  grid-column-start: 2;
+  grid-column-end: 3;
 `;

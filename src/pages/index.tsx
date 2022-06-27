@@ -7,6 +7,7 @@ import { Mouse_Cursor } from "../Atoms/atom";
 import * as S from "./indexStyle";
 import View_board from "../components/Board/view_board/View_board";
 import Change_button from "../components/ChangeButton/Change_button";
+import Header from "../components/Header/Header";
 
 const Home: NextPage = () => {
   const Cursor = useRecoilValue(Mouse_Cursor);
@@ -18,6 +19,7 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <S.All cursorname={Cursor}>
+        <Header />
         <S.Cursor>
           <Refresh />
           <Pencil />
