@@ -1,12 +1,28 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { Refresh, Pencil, Eraser } from "../components/Drawing_mode";
 import { useRecoilValue } from "recoil";
 import { Mouse_Cursor } from "../Atoms/atom";
 import * as S from "./indexStyle";
 import Change_button from "../components/ChangeButton/Change_button";
 import Header from "../components/Header/Header";
 import Boards from "../components/Board/Boards/Boards";
+import styled from "styled-components";
+import Func from "../components/Drawing_mode/Func";
+
+const All = styled.div<{ cursorname: string }>`
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 5px;
+  cursor: ${(p): string | undefined =>
+    p.cursorname == "default"
+      ? "default"
+      : p.cursorname == "pencil"
+      ? 'url("/Assets/pencil_Cursor.png") 0 24, auto'
+      : 'url("/Assets/eraser_Cursor.png") 0 12, auto'};
+`;
 
 const Home: NextPage = () => {
   const Cursor = useRecoilValue(Mouse_Cursor);
@@ -17,16 +33,12 @@ const Home: NextPage = () => {
         <title>Good-Shoes</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <S.All cursorname={Cursor}>
+      <All cursorname={Cursor}>
         <Header />
-        <S.Cursor>
-          <Refresh />
-          <Pencil />
-          <Eraser />
-        </S.Cursor>
+        <Func />
         <Boards />
         <Change_button />
-      </S.All>
+      </All>
     </>
   );
 };
