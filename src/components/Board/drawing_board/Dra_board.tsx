@@ -1,6 +1,6 @@
 import React from "react";
 import { useRef, useState, useEffect } from "react";
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useRecoilState } from "recoil";
 import {
   Pencil_Eraser,
   ToolState,
@@ -9,7 +9,7 @@ import {
   CTX,
   Image,
 } from "../../../Atoms/atom";
-import { Board } from "./Style";
+import styled from "styled-components";
 
 const Dra_board = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -98,5 +98,14 @@ const Dra_board = () => {
     </Board>
   );
 };
+
+const Board = styled.div`
+  width: 500px;
+  height: 500px;
+  border: 1px solid black;
+  color: red;
+  font-size: 30px;
+  margin-right: 5px;
+`;
 
 export default Dra_board;
