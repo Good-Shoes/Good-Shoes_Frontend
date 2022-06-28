@@ -6,7 +6,7 @@ import {
   Mouse_Cursor,
   ClearState,
 } from "../../../Atoms/atom";
-import { Pencil_frame } from "./Style";
+import styled from "styled-components";
 
 const Pencil = () => {
   const Tool = useRecoilValue(ToolState);
@@ -35,5 +35,15 @@ const Pencil = () => {
     </>
   );
 };
+
+const Pencil_frame = styled.div`
+  width: 100px;
+  height: 100px;
+  margin-bottom: 15px;
+  img {
+    width: 100px;
+    height: 100px;
+  }
+`;
 
 export default Pencil;

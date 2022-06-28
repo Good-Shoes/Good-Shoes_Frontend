@@ -6,7 +6,7 @@ import {
   Mouse_Cursor,
   ClearState,
 } from "../../../Atoms/atom";
-import { Eraser_frame } from "./Style";
+import styled from "styled-components";
 
 const Eraser = () => {
   const Tool = useRecoilValue(ToolState);
@@ -36,5 +36,15 @@ const Eraser = () => {
     </>
   );
 };
+
+const Eraser_frame = styled.div`
+  width: 100px;
+  height: 100px;
+
+  img {
+    width: 100px;
+    height: 100px;
+  }
+`;
 
 export default Eraser;

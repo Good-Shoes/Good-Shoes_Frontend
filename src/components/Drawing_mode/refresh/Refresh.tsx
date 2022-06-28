@@ -1,8 +1,8 @@
 import React from "react";
+import styled from "styled-components";
 import { useRecoilValue, useSetRecoilState } from "recoil";
 import { ClearState, CTX, Mouse_Cursor, ToolState } from "../../../Atoms/atom";
 
-import { Refresh_Frame } from "./Style";
 const Refresh = () => {
   const ctx = useRecoilValue(CTX);
 
@@ -28,5 +28,16 @@ const Refresh = () => {
     </Refresh_Frame>
   );
 };
+
+const Refresh_Frame = styled.div`
+  width: 100px;
+  height: 100px;
+  margin-bottom: 15px;
+  margin-top: 10px;
+  img {
+    width: 100px;
+    height: 100px;
+  }
+`;
 
 export default Refresh;
