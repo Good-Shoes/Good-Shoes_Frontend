@@ -1,5 +1,13 @@
 import React from "react";
-import { H1 } from "./Style";
+import styled from "styled-components";
+
+const H1 = styled.p`
+  grid-column-start: 2;
+  grid-column-end: 3;
+  justify-self: center;
+  align-self: center;
+  font-size: 5rem;
+`;
 
 const Header = () => {
   return (

@@ -2,12 +2,11 @@ import type { NextPage } from "next";
 import Head from "next/head";
 import { useRecoilValue } from "recoil";
 import { Mouse_Cursor } from "../Atoms/atom";
-import * as S from "./indexStyle";
-import Change_button from "../components/ChangeButton/Change_button";
-import Header from "../components/Header/Header";
-import Boards from "../components/Board/Boards/Boards";
 import styled from "styled-components";
+import Header from "../components/Header/Header";
 import Func from "../components/Drawing_mode/Func";
+import Boards from "../components/Board/Boards/Boards";
+import Change_button from "../components/ChangeButton/Change_button";
 
 const All = styled.div<{ cursorname: string }>`
   width: 100%;
