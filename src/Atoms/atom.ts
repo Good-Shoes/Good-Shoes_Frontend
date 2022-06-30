@@ -25,7 +25,7 @@ export const CTX = atom<any>({
   default: "",
 });
 
-export const Image = atom<string>({
-  key: "Image",
+export const DataUrl = atom<any>({
+  key: "DataUrl",
   default: "",
 });

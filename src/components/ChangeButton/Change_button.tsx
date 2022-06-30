@@ -1,14 +1,13 @@
 import React from "react";
+import { useRecoilValue } from "recoil";
 import styled from "styled-components";
+import { DataUrl } from "../../Atoms/atom";
 
 const Change_button = () => {
+  const Image = useRecoilValue(DataUrl);
   const Convert = () => {
-    let convert = confirm("당신만의 신발을 만드시겠습니까?");
-    if (convert) {
-      alert("만들었습니다.");
-    } else {
-      alert("취소하였습니다.");
-    }
+    console.log(Image.toDataURL("image/png"));
+    // canvas.toDataURL("image/png")
   };
   return (
     <Button onClick={Convert}>
@@ -37,3 +36,9 @@ const Button = styled.div`
 `;
 
 export default Change_button;
+// let convert = confirm("당신만의 신발을 만드시겠습니까?");
+// if (convert) {
+//   alert("만들었습니다.");
+// } else {
+//   alert("취소하였습니다.");
+// }

@@ -7,7 +7,7 @@ import {
   Mouse_Cursor,
   ClearState,
   CTX,
-  Image,
+  DataUrl,
 } from "../../Atoms/atom";
 import styled from "styled-components";
 
@@ -17,8 +17,6 @@ const Dra_board = () => {
 
   // const [ctx, setCtx] = useState<any>(); // 캔버스의 드로잉 컨텍스트
 
-  const [image, setImage] = useRecoilState(Image);
-
   const [ctx, setCtx] = useRecoilState(CTX);
   const [isDrawing, setIsDrawing] = useState(false);
 
@@ -26,15 +24,17 @@ const Dra_board = () => {
   const [Pen_or_Eraser, setPen_or_Eraser] = useRecoilState(Pencil_Eraser);
   const [Cursor, setCursor] = useRecoilState(Mouse_Cursor);
   const [Clear, setClear] = useRecoilState(ClearState);
+  const [data, setData] = useRecoilState(DataUrl);
 
   useEffect(() => {
     const canvas: any = canvasRef.current;
-
     const context = canvas.getContext("2d");
     context.strokeStyle = "black"; // 선의 색
     context.lineWidth = 2.5; // 선의 굵기
     contextRef.current = context;
-    console.log(context);
+
+    // setData(canvas.toDataURL("image/png"));
+    setData(canvas);
     setClear(false);
     setCursor("default");
     setTool(false);
