@@ -5,7 +5,7 @@ import { Mouse_Cursor } from "../Atoms/atom";
 import styled from "styled-components";
 import Header from "../components/Header/Header";
 import Func from "../components/Drawing_mode/Func";
-import Boards from "../components/Board/Boards/Boards";
+import Boards from "../components/Board/Boards";
 import Change_button from "../components/ChangeButton/Change_button";
 
 const Home: NextPage = () => {

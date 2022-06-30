@@ -8,7 +8,7 @@ import {
   ClearState,
   CTX,
   Image,
-} from "../../../Atoms/atom";
+} from "../../Atoms/atom";
 import styled from "styled-components";
 
 const Dra_board = () => {
