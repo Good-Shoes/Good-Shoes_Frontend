@@ -1,6 +1,6 @@
 import React from "react";
-import Dra_board from "../drawing_board/Dra_board";
-import View_board from "../view_board/View_board";
+import Dra_board from "./Dra_board";
+import View_board from "./View_board";
 import styled from "styled-components";
 
 const Board = styled.div`
