@@ -25,9 +25,16 @@ const Change_button = () => {
     formdata.append("ShoesImg", file);
     console.log(file);
 
-    axios
-      .post("", formdata, {
-        headers: {},
+    const url = "";
+    SendtoImg(url, formdata);
+  };
+
+  const SendtoImg = async (url: string, formdata: any) => {
+    await axios
+      .post(url, formdata, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
       })
       .then((res) => {
         console.log(res);
