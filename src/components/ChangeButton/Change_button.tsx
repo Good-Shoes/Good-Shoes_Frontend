@@ -9,6 +9,12 @@ const Change_button = () => {
     const imgUrl = Image.toDataURL("image/png");
     console.log(imgUrl);
     dataURLtoFile(imgUrl);
+    let convert = confirm("당신만의 신발을 만드시겠습니까?");
+    if (convert) {
+      alert("만들었습니다.");
+    } else {
+      alert("취소하였습니다.");
+    }
   };
 
   const dataURLtoFile = (imgURL: any) => {
